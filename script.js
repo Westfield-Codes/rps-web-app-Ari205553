@@ -16,11 +16,13 @@ function getRounds(){
  * @return = none
  */
 function setRounds(rounds){
-    if (rounds % 2 == 0) {
+    if (rounds % 2 == 0 || isNaN(rounds)) {
         //alert("must be odd");
         document.getElementById("rounds").value = "odd numbers only"
     }
     else {
+        let score = [0,0];
+        localStorage.setItem("score",JSON.stringify(score));
         localStorage.setItem("rounds",rounds);
         localStorage.setItem("round",1);
         window.location.href = "chooser.html";
@@ -36,9 +38,12 @@ function setRounds(rounds){
 function showRound(){
     let round = localStorage.getItem("round");
     let rounds = localStorage.getItem("rounds");
+    let score = JSON.parse(localStorage.getItem("score"));
     if (round > rounds) {
         window.location.href = "gameover.html";
     }
+    let scoreBox= document.getElementById("scoreBox");
+    scoreBox.innerHTML = score.toString();
     let statsBox = document.getElementById("statsBox");
     let message = "Round " + round + " of " + rounds;
     statsBox.innerHTML = message;
@@ -70,11 +75,11 @@ function findWinner(u,c){
         //alert("We both picked " + u);
     }
     else {
-        let winner = " ";
+        let winner = localStorage.getItem("winner");
         let winArray=[["r","p","I"],["r","s","you"],["p","s","I"],["p","r","you"],["s","r","I"],["s","p","you"]];
         for (let i = 0; i< winArray.length; i++){
             if (winArray[i][0] == u && winArray[i][1]==c){
-                winner= winArray[i][2];
+                winner = winArray[i][2];
 
             }
         }
@@ -83,6 +88,7 @@ function findWinner(u,c){
         let round = localStorage.getItem("round");
         round++;
         localStorage.setItem("round",round);
+        localStorage.setItem(JSON.parse(score));
         showRound();
     }
 }
