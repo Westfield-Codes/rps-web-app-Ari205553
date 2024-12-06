@@ -23,6 +23,7 @@ function setRounds(rounds){
     else {
         let score = [0,0];
         localStorage.setItem("score",JSON.stringify(score));
+        JSON.parse(localStorage.getItem(score));
         localStorage.setItem("rounds",rounds);
         localStorage.setItem("round",1);
         window.location.href = "chooser.html";
@@ -76,19 +77,23 @@ function findWinner(u,c){
     }
     else {
         let winner = localStorage.getItem("winner");
-        let winArray=[["r","p","I"],["r","s","you"],["p","s","I"],["p","r","you"],["s","r","I"],["s","p","you"]];
+        let winArray=[["r","p","I"],["r","s","You"],["p","s","I"],["p","r","You"],["s","r","I"],["s","p","You"]];
         for (let i = 0; i< winArray.length; i++){
             if (winArray[i][0] == u && winArray[i][1]==c){
                 winner = winArray[i][2];
-
-            }
+            }   
         }
         //alert("You choose " + u + " and I choose " + c + " " + winner + " win!");
+        let players = ["You" , "I"];
+        let win = players.indexof(winner);
+        let score = localStorage.getItem(JSON.parse(score));
+        score[win]++;
+
         document.getElementById("result").innerHTML = "choose a move";
         let round = localStorage.getItem("round");
         round++;
         localStorage.setItem("round",round);
-        localStorage.setItem(JSON.parse(score));
+        localStorage.setItem("score",JSON.stringify(score));
         showRound();
     }
 }
