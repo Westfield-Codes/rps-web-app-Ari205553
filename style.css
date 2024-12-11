@@ -13,3 +13,10 @@ body {
   background: white;
 padding : 10px;
 }
+.over {
+  font-size: 24pt;
+   margin: auto;
+    position: static!important;
+     width:10em;
+    text-align: center;
+}

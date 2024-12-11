@@ -14,18 +14,18 @@
 1.  **done** In showRound, get score from local storage, JSON parsed.
 1.  **done** Next, replace "Score: loading" in scoreBox with score.toString()
 1.  **done** In findWinner, store the winner in local storage as winner.
-1. **done**After you set the round, get the score array from local storage, JSON parsed. 
+1. **done** After you set the round, get the score array from local storage, JSON parsed. 
 1. **done** Next, create a players array with the two players, "You" first. 
 1. **done** Next, set win equal to the index of the winner in players.
 1. **done**  Next, increase by one the value of the element in the score array with index win**
-1. Next, display the updated score in the scoreBox div with "Score : " + score.toString;
-1. Next, store the score array, stringified, in local storage.
-1. Now, in gameover.html, add the scorebox div above the play again button
-1. Give scoreBox the class "over" 
-1. Style over with font 24pt, margin auto, position static (important), width 10 em, text align center.
-1. Get the winner variable from local storage
-1. Create a variable called message, and begin it winner + won, 
-1. Add the score to message, but join the values with " to " instead of a comma. 
+1. **done** Next, display the updated score in the scoreBox div with "Score : " + score.toString;
+1. **done** Next, store the score array, stringified, in local storage.
+1. **done** Now, in gameover.html, add the scorebox div above the play again button
+1. **done** Give scoreBox the class "over" 
+1. **done** Style over with font 24pt, margin auto, position static (important), width 10 em, text align center.
+1. **done** Get the winner variable from local storage
+1. **done** Create a variable called message, and begin it winner + won, 
+1. **done** Add the score to message, but join the values with " to " instead of a comma. 
 1. Display the message in scoreBox. 
 1. If this is working, save the branch now. 
 1. Create a new branch called rps web refactored. 

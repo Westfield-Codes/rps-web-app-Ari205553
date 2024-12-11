@@ -23,7 +23,6 @@ function setRounds(rounds){
     else {
         let score = [0,0];
         localStorage.setItem("score",JSON.stringify(score));
-        JSON.parse(localStorage.getItem(score));
         localStorage.setItem("rounds",rounds);
         localStorage.setItem("round",1);
         window.location.href = "chooser.html";
@@ -40,7 +39,7 @@ function showRound(){
     let round = localStorage.getItem("round");
     let rounds = localStorage.getItem("rounds");
     let score = JSON.parse(localStorage.getItem("score"));
-    if (round > rounds) {
+    if (round > rounds) { 
         window.location.href = "gameover.html";
     }
     let scoreBox= document.getElementById("scoreBox");
@@ -83,17 +82,28 @@ function findWinner(u,c){
                 winner = winArray[i][2];
             }   
         }
-        //alert("You choose " + u + " and I choose " + c + " " + winner + " win!");
+        document.getElementById("result").innerHTML = "You choose " + u + " and I choose " + c + " " + winner + " win!";
         let players = ["You" , "I"];
-        let win = players.indexof(winner);
-        let score = localStorage.getItem(JSON.parse(score));
+        let win = players.indexOf(winner);
+        let score = JSON.parse(localStorage.getItem("score"));
         score[win]++;
-
-        document.getElementById("result").innerHTML = "choose a move";
+        //Next, display the updated score in the scoreBox div with "Score : " + score.toString;
+        document.getElementById("scoreBox").innerHTML = "Score : " + score.toString;
         let round = localStorage.getItem("round");
         round++;
         localStorage.setItem("round",round);
         localStorage.setItem("score",JSON.stringify(score));
         showRound();
     }
+}
+function endGame(){
+    let winner = localStorage.getItem("winner");
+    let score = JSON.parse(localStorage.getItem("score"));
+    let message = winner + " won";
+    if (score[0] > score[1]){
+        localStorage.setItem("winner", " you");
+    }
+    else
+    message += score.join(" to ");
+    document.getElementById("scoreBox").innerHTML = message;
 }
