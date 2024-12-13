@@ -87,7 +87,10 @@ function findWinner(u,c){
         let win = players.indexOf(winner);
         let score = JSON.parse(localStorage.getItem("score"));
         score[win]++;
-        //Next, display the updated score in the scoreBox div with "Score : " + score.toString;
+        let rounds = localStorage.getItem("rounds");
+        if ( score[win] > rounds/2){
+            window.location.href = "gameover.html";
+        }
         document.getElementById("scoreBox").innerHTML = "Score : " + score.toString;
         let round = localStorage.getItem("round");
         round++;
@@ -97,13 +100,17 @@ function findWinner(u,c){
     }
 }
 function endGame(){
-    let winner = localStorage.getItem("winner");
+    let winner = "I";
     let score = JSON.parse(localStorage.getItem("score"));
-    let message = winner + " won";
     if (score[0] > score[1]){
-        localStorage.setItem("winner", " you");
+       winner = "You";
+    }
+    let message = winner + " won ";
+    if (score[0] > score[1]){
+        localStorage.setItem("winner", " You");
     }
     else
     message += score.join(" to ");
     document.getElementById("scoreBox").innerHTML = message;
+
 }

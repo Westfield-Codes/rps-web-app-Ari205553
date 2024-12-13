@@ -26,9 +26,9 @@
 1. **done** Get the winner variable from local storage
 1. **done** Create a variable called message, and begin it winner + won, 
 1. **done** Add the score to message, but join the values with " to " instead of a comma. 
-1. Display the message in scoreBox. 
-1. If this is working, save the branch now. 
-1. Create a new branch called rps web refactored. 
-1. Go over all the code.  If you see any repeated lines, make new a function for those if possible.  
-1. If one player earns more than half the rounds, end the game.
-1. When you are sure it works, pull request this branch to main, then merge it.  Then you can style to match your wireframes. Í
+1. **done** Display the message in scoreBox. 
+1. **done** If this is working, save the branch now. 
+1. **done** Create a new branch called rps web refactored. 
+1. **done** Go over all the code.  If you see any repeated lines, make new a function for those if possible.  
+1. **done** If one player earns more than half the rounds, end the game.
+1.**done When you are sure it works, pull request this branch to main, then merge it.  Then you can style to match your wireframes. Í
