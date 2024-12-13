@@ -5,13 +5,12 @@
     <title>RPS Web App</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <div  id= "console" >
+  <body onload = "endGame();"> 
+    <div id= "console">
     <h1>Rock Paper Scissors</h1>
-    <h2>Choose Number of Rounds</h2>
-    <p>Must be odd!</p>
-    <input id="rounds">
-    <button onclick="getRounds();">Choose Rounds</button>
+    <h2>Game Over!</h2>
+    <div id = "scoreBox" class = "over"> "Score : " </div>
+    <button onclick="playAgain();">Play Again?</button>
   </div>
     <script src="script.js"></script>
   </body>

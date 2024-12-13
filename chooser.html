@@ -5,13 +5,15 @@
     <title>RPS Web App</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body onload = "showRound();" >
-    <div id="statsBox">checking...</div>
-    <h1> Rock Paper Scissors</h1>
-    <h2>round 1</h2>
-    <button onclick="cpuTurn('r');">rock</button>
-    <button onclick="cpuTurn('p');">paper</button>
-    <button onclick="cpuTurn('s');">scissors</button>
+  <body onload = "showRound();">
+    <div id = "console">
+    <div id = "scoreBox"> "Score : " </div>
+    <div id="statsBox">Loading ...</div>
+    <div id = "result"> choose a move </div>
+    <button onclick="cpuTurn('r');">Rock</button>
+    <button onclick="cpuTurn('p');">Paper</button>
+    <button onclick="cpuTurn('s');">Scissors</button>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>
