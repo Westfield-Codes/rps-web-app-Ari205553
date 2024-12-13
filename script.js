@@ -112,5 +112,7 @@ function endGame(){
     else
     message += score.join(" to ");
     document.getElementById("scoreBox").innerHTML = message;
-
+}
+function playAgain(){
+    window.location.href = "index.html";
 }

@@ -1,16 +1,24 @@
-body {
-  background-color:rgb(148, 14, 108);
-  color: white;
+#console {
+  background-image: linear-gradient(rgb(158, 15, 158), rgb(190, 14, 146));
+  color: rgb(255, 251, 0);
   position: relative;
-  
+  width: 1300px;
+  height: 1300px;
+  margin: auto;
+  text-align: center;
+  padding: 50px;
+  border: 1px;
+  border-radius: 10px;
+
+
 }
 #scoreBox {
   position: absolute;
   right: 10px;
   top: 10px;
   border: 1px;
-  color:  black;
-  background: white;
+  color:  rgb(255, 251, 0);
+  background-image: radial-gradient(rgb(6, 41, 236), rgb(9, 96, 226), rgb(25, 151, 253));
 padding : 10px;
 }
 .over {
@@ -19,4 +27,7 @@ padding : 10px;
     position: static!important;
      width:10em;
     text-align: center;
+}
+a{
+  color:yellow;
 }
